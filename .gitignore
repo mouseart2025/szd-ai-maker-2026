@@ -1,0 +1,19 @@
+# PlatformIO
+.pio/
+
+# IDE
+.vscode/
+.idea/
+
+# AI tools
+.claude/
+.opencode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.elf
+*.hex
+*.bin
