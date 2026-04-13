@@ -16,15 +16,27 @@ opencode
 
 # 2. 告诉 AI 拉仓库并认识项目
 > 请帮我做以下事情：
-> 1. 克隆 https://github.com/mouseart2025/szd-ai-maker-2026.git 到我的桌面
-> 2. cd 进入 szd-ai-maker-2026 目录
+>
+> 1. 把课程仓库下载到我的桌面 (szd-ai-maker-2026 目录)。
+>    仓库地址: https://github.com/mouseart2025/szd-ai-maker-2026
+>
+>    ⚠️ 中国大陆终端访问 GitHub 经常不稳定（但浏览器一般可以）。请按顺序试，
+>    每种最多试 30 秒，不行立刻换下一个：
+>    A. git clone
+>    B. gh repo clone mouseart2025/szd-ai-maker-2026
+>    C. curl 下载 ZIP（codeload.github.com）
+>    D. gh api 逐文件拉
+>    E. **A-D 全失败 → 提示我用浏览器手动下载 ZIP，告诉你解压路径**
+>    F. 浏览器也不通 → 提示我找助教 U 盘
+>
+> 2. cd 进入 szd-ai-maker-2026 目录（或我告诉你的解压路径）
 > 3. 阅读 CLAUDE.md
-> 4. 找到 arduino-cli 的路径（内置在 Arduino IDE 里，CLAUDE.md 有说明），运行 `arduino-cli version` 验证可用
+> 4. 找到 arduino-cli 路径（内置在 Arduino IDE 里，CLAUDE.md 有说明），运行 `arduino-cli version` 验证可用
 > 5. 告诉我项目支持什么硬件、arduino-cli 是否可用
 >
-> 我的系统是 [macOS / Windows]。如果没装 git，请你自己想办法解决。
+> 我的系统是 [macOS / Windows]。
 >
-> **重要**：今天所有项目文件都在 szd-ai-maker-2026 这个目录下创建，请把它当作工作目录，不要在我的桌面或其他系统位置写文件。
+> **重要**：今天所有项目文件都在 szd-ai-maker-2026 这个目录下创建，请把它当作工作目录。
 ```
 
 成功后，AI 会知道项目用的是 XIAO ESP32S3 + Grove Base + LED/风扇/Buzzer，接下来你直接和它对话让它做任何硬件项目就行。
