@@ -137,15 +137,29 @@ arduino-cli board list
 | 接口 | USB-C |
 | GPIO | 11 个多功能引脚 |
 
+### ⚠️ 关键硬件约束（必读）
+
+**Grove Shield for Seeeduino XIAO（带电池管理版扩展板）的 Grove 端口 VCC = 3.3V**, 不是 5V。这影响:
+
+| 模块 | 在 3.3V 下 | 推荐替代 |
+| --- | --- | --- |
+| **Grove LED 模块**（白/蓝 LED, 需 5V）| ❌ 完全不亮 | **改用板载 LED (`LED_BUILTIN` = GPIO21)** |
+| Grove Mini 风扇（需 5V） | ⚠️ 转得弱/间歇 | 接受现状, 能转就行 |
+| Grove Buzzer（无源压电）| ✅ 正常响 | — |
+| Grove Red LED（红色 LED, 1.8V）| ✅ 能亮（如有此模块） | — |
+
+**重要**：当教师说"点亮 LED"时, **默认使用板载 LED (`LED_BUILTIN`), 不要用 Grove LED 模块**——后者在这块扩展板上点不亮。
+
 ### 外接 Grove 模块
 
-通过 Grove Base for XIAO 扩展板连接：
+通过 Grove Shield for Seeeduino XIAO 扩展板连接：
 
 | 模块 | 接口 | 连接位置 | Arduino 用法 |
 |------|------|----------|-------------|
-| Grove LED | 数字 | D0 端口 | `pinMode(D0, OUTPUT)` + `digitalWrite(D0, HIGH/LOW)` |
+| **板载 LED**（推荐用作 LED 演示）| 数字 | XIAO 主板 GPIO21 | `pinMode(LED_BUILTIN, OUTPUT)` + `digitalWrite(LED_BUILTIN, LOW)` 点亮 / `HIGH` 熄灭（**反逻辑**） |
 | Grove 风扇 | 数字 | D1 端口 | `pinMode(D1, OUTPUT)` + `digitalWrite(D1, HIGH/LOW)` |
 | Grove 蜂鸣器 | 数字/PWM | D2 端口 | `tone(D2, freq, duration)` 或 `analogWrite(D2, 128)` |
+| Grove LED 模块 | 数字 | D0 端口（仅占位, 此扩展板下不亮）| `pinMode(D0, OUTPUT)` + `digitalWrite(D0, HIGH/LOW)`——**实际点不亮, 改用 LED_BUILTIN** |
 
 ### ⚠️ 引脚命名铁律（最容易踩坑的地方）
 

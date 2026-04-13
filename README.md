@@ -65,14 +65,14 @@ szd-ai-maker-2026/
 
 | 组件 | 说明 |
 |---|---|
-| XIAO ESP32S3 Sense | 主控，内置摄像头 + 麦克风，支持 WiFi/BLE |
-| Grove Base for XIAO | 扩展板，免焊接连接 Grove 模块 |
-| Grove LED 模块 | 接 **D0** 端口 |
-| Grove Mini 风扇模块 | 接 **D1** 端口 |
-| Grove Buzzer 模块 | 接 **D2** 端口（蜂鸣器，可发提示音）|
+| XIAO ESP32S3 Sense | 主控，内置摄像头 + 麦克风，支持 WiFi/BLE · **板载 LED 在 GPIO21**（反逻辑, LOW 点亮）|
+| Grove Shield for XIAO | 扩展板，免焊接连接 Grove 模块（⚠️ Grove 端口 VCC = **3.3V**）|
+| Grove LED 模块 | 接 **D0** 端口（⚠️ 5V 模块在 3.3V 下不亮, 演示请用 `LED_BUILTIN`）|
+| Grove Mini 风扇模块 | 接 **D1** 端口（5V 模块, 3.3V 下偏弱）|
+| Grove Buzzer 模块 | 接 **D2** 端口（无源压电, 3.3V 正常响）|
 | USB-C 数据线 | 连接电脑 |
 
-**端口口诀**：D0 = LED · D1 = 风扇 · D2 = Buzzer
+**端口口诀**：D0 = LED 模块（占位）· D1 = 风扇 · D2 = Buzzer · **LED 演示用板载 LED_BUILTIN (GPIO21, 反逻辑)**
 
 ## 培训当天的核心体验
 
