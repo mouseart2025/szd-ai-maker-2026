@@ -198,13 +198,24 @@ void loop() {
 **每个项目是一个独立文件夹**，里面只放一个 `.ino` 文件，文件名**必须**与文件夹名一致。
 
 ```
-my-project/
-├── my-project.ino       # 主程序（文件名 = 文件夹名！）
-└── requirements.md      # （可选）需求文档
+szd-ai-maker-2026/               # ← 本仓库根目录（你的工作目录）
+├── CLAUDE.md                    # 本文档
+├── docs/                        # 预置需求文档（只读参考）
+├── examples/                    # 已验证示例（只读参考）
+├── templates/                   # 项目模板
+│
+├── my-project/                  # ✅ 新项目在这里创建
+│   ├── my-project.ino
+│   └── requirements.md          # 可选
+│
+└── my-other-project/            # ✅ 另一个项目也在这里
+    └── my-other-project.ino
 ```
 
 **关键约定**：
 
+- **所有新创建的项目文件夹必须放在本仓库根目录下**，不要在用户的 `~/`、`~/Desktop`、`/tmp` 或其他系统目录创建项目文件
+- 如果教师启动 OpenCode 时不在本仓库目录下，请**先帮教师 cd 到 `szd-ai-maker-2026` 目录**，再开始任何工作
 - `.ino` 文件名**必须**与文件夹名一致，否则 Arduino 编译失败
 - 不需要 `#include <Arduino.h>`（.ino 文件自动包含）
 - 不需要 `platformio.ini`
