@@ -10,7 +10,6 @@
  *   3. 浏览器打开 192.168.4.1
  */
 
-#include <Arduino.h>
 #include <WiFi.h>
 #include <WebServer.h>
 

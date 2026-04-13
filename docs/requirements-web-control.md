@@ -42,7 +42,8 @@ XIAO ESP32S3 作为 WiFi 热点，用户用手机连接后通过网页控制 Gro
 4. 用网页按钮控制 LED 和风扇
 
 ## 技术要求
-- 使用 PlatformIO + Arduino 框架
+- 使用 Arduino 框架 + arduino-cli 编译上传
 - 使用 `WiFi.h` 和 `WebServer.h` 库（ESP32 内置，无需额外安装）
 - 串口波特率 115200
 - HTML 页面内嵌在代码中（不使用外部文件）
+- 项目结构为独立文件夹，包含一个 `.ino` 文件（文件名与文件夹名一致）

@@ -5,7 +5,6 @@
  * 功能：LED 每 500ms 闪烁一次，验证开发环境
  */
 
-#include <Arduino.h>
 
 const int LED_PIN = D0;  // Grove LED 接在 D0 端口
 
