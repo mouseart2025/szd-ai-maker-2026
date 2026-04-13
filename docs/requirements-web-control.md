@@ -4,7 +4,7 @@
 手机 Web 控制 LED 和风扇
 
 ## 一句话描述
-XIAO ESP32S3 作为 WiFi 热点，用户用手机连接后通过网页控制 Grove LED 和 Grove 风扇。
+XIAO ESP32S3 作为 WiFi 热点，用户用手机连接后通过网页控制板载 LED 和 Grove 风扇。
 
 ## 功能需求
 
@@ -17,7 +17,7 @@ XIAO ESP32S3 作为 WiFi 热点，用户用手机连接后通过网页控制 Gro
 ### 功能 2：Web 控制页面
 - 在 192.168.4.1 上提供一个 HTML 网页
 - 网页包含以下控件：
-  - **LED 开关按钮**：点击切换 Grove LED（D0）的亮灭状态
+  - **LED 开关按钮**：点击切换 XIAO 板载 LED（`LED_BUILTIN` = GPIO21, **反逻辑**：LOW 点亮）的亮灭状态
   - **风扇开关按钮**：点击切换 Grove 风扇（D1）的开关状态
   - **LED 当前状态显示**：显示"开"或"关"
   - **风扇当前状态显示**：显示"开"或"关"
@@ -30,8 +30,8 @@ XIAO ESP32S3 作为 WiFi 热点，用户用手机连接后通过网页控制 Gro
 - 每次操作在串口输出状态变化，如 "LED: ON"、"Fan: OFF"
 
 ## 硬件连接
-- XIAO ESP32S3 Sense 通过 Grove Base 扩展板连接
-- Grove LED 模块接在 D0 端口
+- XIAO ESP32S3 Sense 通过 Grove Shield 扩展板连接
+- **LED 使用 XIAO 板载 LED**（GPIO21, 反逻辑, 不需要外接模块）
 - Grove Mini 风扇模块接在 D1 端口
 - Grove Buzzer 模块接在 D2 端口（本需求默认不使用，可作为扩展功能）
 - USB-C 连接电脑（供电 + 调试）

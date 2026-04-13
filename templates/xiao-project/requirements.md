@@ -24,10 +24,9 @@
 
 ## 使用的硬件
 
-- [ ] Grove LED (D0)
+- [ ] **板载 LED** (`LED_BUILTIN` = GPIO21, 反逻辑：LOW 点亮)
 - [ ] Grove Mini 风扇 (D1)
 - [ ] Grove Buzzer 蜂鸣器 (D2)
-- [ ] 板载 LED (LED_BUILTIN)
 - [ ] WiFi AP 热点
 - [ ] Web Server 网页控制
 - [ ] 摄像头 (OV2640)

@@ -1,8 +1,9 @@
 /**
- * 示例 02：WiFi Web 控制 LED + 风扇
+ * 示例 02：WiFi Web 控制 板载 LED + 风扇
  *
- * 硬件：XIAO ESP32S3 Sense + Grove Base + Grove LED (D0) + Grove Fan (D1)
- * 功能：XIAO 作为 WiFi 热点，手机连接后通过网页控制 LED 和风扇
+ * 硬件：XIAO ESP32S3 Sense + Grove Shield + Grove Mini Fan (D1)
+ *       LED 使用 XIAO 板载 LED (LED_BUILTIN = GPIO21, 反逻辑)
+ * 功能：XIAO 作为 WiFi 热点，手机连接后通过网页控制板载 LED 和风扇
  *
  * 使用方式：
  *   1. 上传程序
@@ -13,7 +14,7 @@
 #include <WiFi.h>
 #include <WebServer.h>
 
-const int LED_PIN = D0;
+const int LED_PIN = LED_BUILTIN;  // 板载 LED, 反逻辑 (LOW 点亮)
 const int FAN_PIN = D1;
 const char* ssid = "XIAO-Lab";
 const char* password = "12345678";
@@ -65,7 +66,8 @@ void handleRoot() {
 
 void handleLed() {
     ledState = !ledState;
-    digitalWrite(LED_PIN, ledState ? HIGH : LOW);
+    // 板载 LED 是反逻辑: LOW 点亮, HIGH 熄灭
+    digitalWrite(LED_PIN, ledState ? LOW : HIGH);
     Serial.println(ledState ? "LED: ON" : "LED: OFF");
     server.sendHeader("Location", "/");
     server.send(303);
@@ -85,7 +87,7 @@ void setup() {
     // 初始化 GPIO
     pinMode(LED_PIN, OUTPUT);
     pinMode(FAN_PIN, OUTPUT);
-    digitalWrite(LED_PIN, LOW);
+    digitalWrite(LED_PIN, HIGH);  // 板载 LED 反逻辑: HIGH = 熄灭（初始关闭）
     digitalWrite(FAN_PIN, LOW);
 
     // 启动 WiFi AP
