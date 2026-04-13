@@ -32,7 +32,8 @@ XIAO ESP32S3 作为 WiFi 热点，用户用手机连接后通过网页控制 Gro
 ## 硬件连接
 - XIAO ESP32S3 Sense 通过 Grove Base 扩展板连接
 - Grove LED 模块接在 D0 端口
-- Grove 风扇模块接在 D1 端口
+- Grove Mini 风扇模块接在 D1 端口
+- Grove Buzzer 模块接在 D2 端口（本需求默认不使用，可作为扩展功能）
 - USB-C 连接电脑（供电 + 调试）
 
 ## 使用方式

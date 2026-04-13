@@ -1,5 +1,8 @@
-# PlatformIO
-.pio/
+# Arduino build
+build/
+*.elf
+*.hex
+*.bin
 
 # IDE
 .vscode/
@@ -12,8 +15,3 @@
 # OS
 .DS_Store
 Thumbs.db
-
-# Build
-*.elf
-*.hex
-*.bin

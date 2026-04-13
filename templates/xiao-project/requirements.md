@@ -25,7 +25,8 @@
 ## 使用的硬件
 
 - [ ] Grove LED (D0)
-- [ ] Grove 风扇 (D1)
+- [ ] Grove Mini 风扇 (D1)
+- [ ] Grove Buzzer 蜂鸣器 (D2)
 - [ ] 板载 LED (LED_BUILTIN)
 - [ ] WiFi AP 热点
 - [ ] Web Server 网页控制
