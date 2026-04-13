@@ -18,7 +18,9 @@ opencode
 > 请帮我做以下事情：
 > 1. 克隆 https://github.com/mouseart2025/szd-ai-maker-2026.git 到我的桌面
 > 2. cd 进入 szd-ai-maker-2026 目录
-> 3. 阅读 CLAUDE.md，告诉我这个项目支持什么硬件
+> 3. 阅读 CLAUDE.md
+> 4. 找到 arduino-cli 的路径（内置在 Arduino IDE 里，CLAUDE.md 有说明），运行 `arduino-cli version` 验证可用
+> 5. 告诉我项目支持什么硬件、arduino-cli 是否可用
 >
 > 我的系统是 [macOS / Windows]。如果没装 git，请你自己想办法解决。
 >
