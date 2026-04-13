@@ -43,7 +43,8 @@ const char* htmlPage = R"rawliteral(
   </style>
 </head>
 <body>
-  <h1>XIAO Control Panel</h1>
+  <h1>%SSID%</h1>
+  <p style="color:#aaa; font-size:12px; margin-top:-10px;">你正在控制这台设备</p>
   <p><a href="/led"><button class="btn %LED_CLASS%">LED: %LED_STATE%</button></a></p>
   <p><a href="/fan"><button class="btn %FAN_CLASS%">Fan: %FAN_STATE%</button></a></p>
   <p class="status">AI Generated - Vibe Coding Demo</p>
@@ -53,6 +54,7 @@ const char* htmlPage = R"rawliteral(
 
 String getPage() {
     String page = String(htmlPage);
+    page.replace("%SSID%", String(ssid));  // 顶部显示 SSID 作为设备标识
     page.replace("%LED_STATE%", ledState ? "ON" : "OFF");
     page.replace("%LED_CLASS%", ledState ? "led-on" : "led-off");
     page.replace("%FAN_STATE%", fanState ? "ON" : "OFF");
